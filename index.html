@@ -6,6 +6,8 @@
 <title>The Masters Draft — 12th Annual</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
 <style>
 :root {
   --cream: #f5f0e8;
@@ -386,7 +388,7 @@ h1 em { font-style:italic; color:var(--gold); }
 <header>
   <div class="hflag">
     <div class="hline l"></div>
-    <span class="heyebrow">Augusta National &nbsp;·&nbsp; April 2026</span>
+    <span class="heyebrow">Augusta National &nbsp;·&nbsp; April 2025</span>
     <div class="hline r"></div>
   </div>
   <h1>The Masters <em>Draft</em></h1>
@@ -537,7 +539,7 @@ h1 em { font-style:italic; color:var(--gold); }
 <div id="leaderboard" class="panel">
   <div class="lb-header">
     <div>
-      <div class="stitle">2026 Masters Tournament</div>
+      <div class="stitle">2025 Masters Tournament</div>
       <div style="font-size:11px;color:var(--text-muted);letter-spacing:.08em;margin-top:4px">Augusta National · Par 72 · Final Results</div>
     </div>
     <div style="font-size:11px;color:var(--text-muted);font-family:'Josefin Sans',sans-serif;letter-spacing:.06em" id="lbUpdated"></div>
@@ -562,6 +564,49 @@ h1 em { font-style:italic; color:var(--gold); }
  
 </div>
 <script>
+// ── FIREBASE SETUP ────────────────────────────────────────────────────────────
+const firebaseConfig = {
+  apiKey: "AIzaSyBSfbI74wIA5TgqS9RSweKflnw-XfLc08A",
+  authDomain: "masters-draft-18b9c.firebaseapp.com",
+  databaseURL: "https://masters-draft-18b9c-default-rtdb.firebaseio.com",
+  projectId: "masters-draft-18b9c",
+  storageBucket: "masters-draft-18b9c.firebasestorage.app",
+  messagingSenderId: "940455285840",
+  appId: "1:940455285840:web:7d238afc3db3e942f9ed55"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+const draftRef = db.ref('draft');
+ 
+// Push local state to Firebase
+function saveToFirebase() {
+  draftRef.set({
+    managers: draftManagers,
+    pickLimit: draftPickLimit,
+    picks: draftPicks,
+    snakeOrder: snakeOrder,
+    currentPickIdx: currentPickIdx,
+    feedLog: feedLog
+  });
+}
+ 
+// Listen for changes from any browser and sync locally
+function listenToFirebase() {
+  draftRef.on('value', snapshot => {
+    const data = snapshot.val();
+    if (!data) return;
+    if (data.managers) draftManagers = data.managers;
+    if (data.pickLimit) draftPickLimit = data.pickLimit;
+    if (data.picks) draftPicks = data.picks;
+    if (data.snakeOrder) snakeOrder = data.snakeOrder;
+    if (typeof data.currentPickIdx === 'number') currentPickIdx = data.currentPickIdx;
+    if (data.feedLog) feedLog = data.feedLog;
+    syncDraftToGlobal();
+    // Re-render draft tab if it's open
+    if (document.getElementById('draft').classList.contains('active')) renderDraftTab();
+  });
+}
+ 
 const DRAFT = {
   "Kyle Howard":    ["Corey Conners","J.T. Poston","Justin Rose","Matt Fitzpatrick","Sam Burns","Stephan Jaeger","Thorbjorn Olesen","Xander Schauffele"],
   "Connor King":    ["Byeong-Hun An","Grayson Murray","Kurt Kitayama","Lucas Glover","Ludvig Aberg","Rickie Fowler","Sahith Theegala","Wyndham Clark"],
@@ -890,10 +935,12 @@ function loadDraftFromStorage() {
 }
  
 function saveDraftToStorage() {
-  localStorage.setItem('mastersDraft2026', JSON.stringify({
+  saveToFirebase();
+  // Also keep localStorage as offline fallback
+  try { localStorage.setItem('mastersDraft2026', JSON.stringify({
     managers: draftManagers, pickLimit: draftPickLimit,
     picks: draftPicks, snakeOrder, currentPickIdx, feedLog
-  }));
+  })); } catch(e) {}
 }
  
 function getDraftObject() {
@@ -1286,6 +1333,7 @@ function logPick(mgr, player, round, pickNum) {
  
 // Init
 loadDraftFromStorage();
+listenToFirebase(); // real-time sync
 syncDraftToGlobal();
  
  
