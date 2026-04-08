@@ -33,28 +33,28 @@ body::before {
     radial-gradient(ellipse 50% 50% at 85% 85%, rgba(201,168,76,0.06) 0%, transparent 60%);
 }
 .wrap { position:relative; z-index:1; max-width:1080px; margin:0 auto; padding:0 24px 80px; }
-
+ 
 /* HEADER */
 header { text-align:center; padding:56px 0 40px; border-bottom:1px solid var(--border); margin-bottom:48px; position:relative; }
 header::after { content:''; position:absolute; bottom:-1px; left:50%; transform:translateX(-50%); width:140px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
-
+ 
 .hflag { display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:16px; }
 .hline { height:1px; width:60px; }
 .hline.l { background:linear-gradient(90deg,transparent,var(--gold)); }
 .hline.r { background:linear-gradient(90deg,var(--gold),transparent); }
 .heyebrow { font-family:'Josefin Sans',sans-serif; font-size:10px; letter-spacing:.22em; color:var(--gold); text-transform:uppercase; }
-
+ 
 h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(40px,7vw,74px); font-weight:700; line-height:.95; color:var(--text); letter-spacing:-.01em; }
 h1 em { font-style:italic; color:var(--gold); }
 .hsub { font-size:10px; letter-spacing:.22em; color:var(--text-muted); text-transform:uppercase; margin-top:14px; }
-
+ 
 .rbtn { display:inline-flex; align-items:center; gap:8px; margin-top:20px; padding:8px 22px; border:1px solid var(--border); border-radius:100px; background:transparent; cursor:pointer; font-family:'Josefin Sans',sans-serif; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); transition:all .2s; }
 .rbtn:hover { background:var(--green); color:var(--gold-pale); border-color:var(--text); }
 .rdot { width:6px; height:6px; border-radius:50%; background:var(--green-light); }
 .rdot.spin { background:var(--gold); animation:blink 1s infinite; }
 .rdot.err { background:var(--red); animation:none; }
 @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.7)} }
-
+ 
 /* TABS */
 .tabs { display:flex; border-bottom:2px solid var(--parchment); margin-bottom:40px; overflow-x:auto; }
 .tab { padding:12px 28px 14px; font-family:'Josefin Sans',sans-serif; font-size:11px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--text-muted); background:none; border:none; border-bottom:2px solid transparent; margin-bottom:-2px; cursor:pointer; transition:all .2s; white-space:nowrap; }
@@ -63,26 +63,26 @@ h1 em { font-style:italic; color:var(--gold); }
 .panel { display:none; }
 .panel.active { display:block; animation:fadeUp .3s ease; }
 @keyframes fadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
-
+ 
 /* STANDINGS */
 .st-head { display:grid; grid-template-columns:48px 1fr auto; padding:8px 20px; font-size:10px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--text-muted); border-bottom:1px solid rgba(255,255,255,0.08); margin-bottom:4px; }
 .st-row { display:grid; grid-template-columns:48px 1fr auto; align-items:center; padding:0 20px; border-radius:8px; cursor:pointer; transition:background .15s; margin-bottom:2px; }
 .st-row:hover { background:rgba(27,67,50,0.04); }
 .st-row.open { background:rgba(27,67,50,0.04); border-radius:8px 8px 0 0; }
-
+ 
 .rank { font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:600; color:var(--parchment); line-height:1; padding:18px 0; }
 .rank.g { color:var(--gold-light); }
 .rank.s { color:#b0b0a0; }
 .rank.b { color:#a07840; }
-
+ 
 .minfo { padding:18px 0; }
 .mname { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--text); line-height:1; }
 .mpreview { font-size:10px; letter-spacing:.06em; color:var(--text-muted); margin-top:4px; }
-
+ 
 .mpts { text-align:right; padding:18px 0; }
 .pnum { font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:700; color:var(--text); line-height:1; }
 .plbl { font-size:9px; letter-spacing:.15em; text-transform:uppercase; color:var(--text-muted); }
-
+ 
 .xpanel { display:none; background:rgba(27,67,50,0.04); border-radius:0 0 8px 8px; padding:16px 20px 20px 68px; margin-bottom:2px; border-top:1px solid rgba(255,255,255,0.08); }
 .xpanel.open { display:block; animation:fadeUp .2s ease; }
 .pgrid { display:flex; flex-wrap:wrap; gap:8px; }
@@ -92,7 +92,7 @@ h1 em { font-style:italic; color:var(--gold); }
 .ppos.t { background:rgba(52,183,120,0.2); color:#52b788; }
 .ppos.c { background:rgba(224,92,75,0.12); color:#e07070; }
 .pptbadge { font-size:10px; font-weight:600; color:var(--gold); min-width:28px; text-align:right; }
-
+ 
 /* CHART */
 .chart-box { background:rgba(255,255,255,0.05); border-radius:12px; border:1px solid rgba(255,255,255,0.08); padding:32px; box-shadow:var(--shadow); }
 .chart-box h2 { font-family:'Cormorant Garamond',serif; font-size:26px; font-style:italic; color:var(--text); margin-bottom:24px; }
@@ -103,7 +103,7 @@ h1 em { font-style:italic; color:var(--gold); }
 .lswatch { width:20px; height:3px; border-radius:2px; }
 .lname { color:var(--text-mid); }
 .lpts { font-weight:600; color:var(--text); }
-
+ 
 /* CARDS */
 .cgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px; }
 .dcard { background:rgba(255,255,255,0.05); border-radius:12px; border:1px solid rgba(255,255,255,0.08); overflow:hidden; box-shadow:var(--shadow); transition:transform .2s,box-shadow .2s; }
@@ -124,7 +124,7 @@ h1 em { font-style:italic; color:var(--gold); }
 .dcpos.t { background:rgba(52,183,120,0.2); color:#52b788; }
 .dcpos.c { background:rgba(224,92,75,0.12); color:#e07070; }
 .dcpts { font-weight:600; color:var(--gold); font-size:12px; min-width:28px; text-align:right; }
-
+ 
 /* SCORING */
 .scoring-box { background:rgba(255,255,255,0.05); border-radius:12px; border:1px solid rgba(255,255,255,0.08); padding:40px; box-shadow:var(--shadow); max-width:520px; }
 .scoring-box h2 { font-family:'Cormorant Garamond',serif; font-size:28px; font-style:italic; color:var(--text); margin-bottom:8px; }
@@ -134,16 +134,16 @@ h1 em { font-style:italic; color:var(--gold); }
 .ptbl th:last-child { text-align:right; }
 .ptbl td { padding:7px 0; font-size:13px; color:var(--text-mid); border-bottom:1px solid rgba(255,255,255,0.05); }
 .ptbl td:last-child { text-align:right; font-weight:600; color:var(--text); }
-
+ 
 .err-bar { background:rgba(224,92,75,0.12); border:1px solid #f5c6c6; border-radius:8px; padding:12px 16px; margin-bottom:24px; font-size:12px; color:#e07070; display:none; }
-
+ 
 @media(max-width:600px) {
   .st-row,.st-head { grid-template-columns:40px 1fr auto; padding:0 12px; }
   .xpanel { padding-left:52px; }
   .pnum { font-size:26px; } .rank { font-size:24px; }
   .tab { padding:10px 16px 12px; font-size:10px; }
 }
-
+ 
 /* DRAFT TAB */
 .draft-toolbar { display:flex; gap:24px; flex-wrap:wrap; align-items:flex-start; margin-bottom:20px; padding:24px; background:rgba(255,255,255,0.05); border:1px solid var(--border); border-radius:12px; }
 .draft-toolbar-left { display:flex; gap:16px; flex-wrap:wrap; align-items:flex-end; flex:1; }
@@ -156,7 +156,7 @@ h1 em { font-style:italic; color:var(--gold); }
 .draft-save-btn { padding:9px 20px; background:var(--gold); color:#0d2b1a; border:none; border-radius:6px; font-family:'Josefin Sans',sans-serif; font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; cursor:pointer; transition:opacity .2s; align-self:flex-end; }
 .draft-save-btn:hover { opacity:.85; }
 .draft-status { font-size:11px; color:var(--text-muted); line-height:1.8; text-align:right; }
-
+ 
 /* Snake panel */
 .snake-panel { background:rgba(255,255,255,0.05); border:1px solid var(--border); border-radius:12px; padding:20px 24px; margin-bottom:20px; }
 .snake-header { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px; }
@@ -170,7 +170,7 @@ h1 em { font-style:italic; color:var(--gold); }
 .snake-order { display:flex; flex-direction:column; gap:12px; }
 .snake-round-label { font-size:10px; font-weight:600; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:-4px; }
 .snake-row { display:flex; flex-wrap:wrap; gap:6px; }
-
+ 
 /* Carousel */
 .carousel-nav { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
 .carousel-arrow { width:32px; height:32px; border-radius:50%; background:rgba(255,255,255,0.08); border:1px solid var(--border); color:var(--text); font-size:20px; line-height:1; cursor:pointer; transition:all .15s; display:flex; align-items:center; justify-content:center; }
@@ -190,7 +190,7 @@ h1 em { font-style:italic; color:var(--gold); }
 .ss-round { font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); }
 .ss-name { font-family:'Cormorant Garamond',serif; font-size:14px; font-weight:600; color:var(--text); text-align:center; line-height:1.2; }
 .ss-pick { font-size:10px; color:var(--gold); letter-spacing:.06em; }
-
+ 
 /* Player table */
 .draft-search-wrap { margin-bottom:12px; }
 .draft-search { width:100%; max-width:360px; padding:10px 16px; background:rgba(255,255,255,0.07); border:1px solid var(--border); border-radius:8px; color:var(--text); font-family:'Josefin Sans',sans-serif; font-size:13px; }
@@ -207,7 +207,7 @@ h1 em { font-style:italic; color:var(--gold); }
 .pick-btn:hover { opacity:.85; }
 .pick-btn:disabled { opacity:.3; cursor:not-allowed; background:rgba(255,255,255,0.1); color:var(--text-muted); }
 .assigned-tag { font-size:12px; color:var(--gold); }
-
+ 
 /* LEADERBOARD TAB */
 .lb-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:20px; }
 .tr { text-align:right !important; }
@@ -222,15 +222,15 @@ h1 em { font-style:italic; color:var(--gold); }
 .lb-drafted { font-size:11px; color:var(--gold); letter-spacing:.04em; }
 .lb-name { font-family:'Cormorant Garamond',serif; font-size:17px; font-weight:600; }
 .lb-name.drafted-row { color:var(--gold-pale); }
-
-
+ 
+ 
 /* DRAFT FEED */
 @keyframes feedSlideIn { from { opacity:0; transform:translateY(-10px); } to { opacity:1; transform:translateY(0); } }
 @keyframes clockPulse { 0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,0.4)} 50%{box-shadow:0 0 0 8px rgba(201,168,76,0)} }
 @keyframes pickFlash { 0%{background:rgba(82,183,136,0.2)} 100%{background:transparent} }
-
+ 
 .draft-feed-wrap { display:flex; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
-
+ 
 .draft-feed-panel {
   flex:1; min-width:260px; border-radius:14px; overflow:hidden;
   background:linear-gradient(160deg, rgba(27,67,50,0.9) 0%, rgba(13,43,26,0.95) 100%);
@@ -261,7 +261,7 @@ h1 em { font-style:italic; color:var(--gold); }
 .feed-list::-webkit-scrollbar-track { background:transparent; }
 .feed-list::-webkit-scrollbar-thumb { background:rgba(201,168,76,0.3); border-radius:2px; }
 .feed-empty { padding:32px 18px; font-size:13px; color:var(--text-muted); text-align:center; letter-spacing:.04em; }
-
+ 
 .feed-item {
   padding:10px 18px; display:flex; gap:12px; align-items:flex-start;
   border-left:3px solid transparent; transition:background .15s;
@@ -274,7 +274,7 @@ h1 em { font-style:italic; color:var(--gold); }
   border-left:3px solid var(--gold);
 }
 .feed-item.upcoming { opacity:.4; }
-
+ 
 .feed-avatar {
   width:32px; height:32px; border-radius:50%;
   display:flex; align-items:center; justify-content:center;
@@ -289,7 +289,7 @@ h1 em { font-style:italic; color:var(--gold); }
   animation:clockPulse 2s infinite;
 }
 .feed-avatar.done { background:rgba(82,183,136,0.12); color:var(--green-light); border-color:rgba(82,183,136,0.25); }
-
+ 
 .feed-body { flex:1; }
 .feed-body strong { font-weight:600; color:var(--cream); }
 .feed-body .fp {
@@ -309,7 +309,7 @@ h1 em { font-style:italic; color:var(--gold); }
   color:var(--gold); background:rgba(201,168,76,0.12);
   padding:1px 7px; border-radius:4px; display:inline-block;
 }
-
+ 
 /* Sidebar */
 .draft-feed-sidebar { display:flex; flex-direction:column; gap:12px; min-width:200px; width:220px; }
 .feed-clock-card {
@@ -355,15 +355,15 @@ h1 em { font-style:italic; color:var(--gold); }
 .frl-mgr { color:var(--text-muted); }
 .frl-pick { color:var(--cream); font-weight:600; font-family:'Cormorant Garamond',serif; font-size:14px; }
 .frl-pending { color:var(--text-muted); font-style:italic; font-size:11px; }
-
-
+ 
+ 
 @keyframes lbFlash { 0%{background:rgba(82,183,136,0.18)} 100%{background:transparent} }
 .lb-changed { animation:lbFlash 2s ease forwards; }
 .lb-move { font-size:10px; font-weight:600; margin-left:6px; padding:1px 4px; border-radius:3px; vertical-align:middle; }
 .lb-move.up { color:#52b788; background:rgba(82,183,136,0.15); }
 .lb-move.dn { color:var(--red); background:rgba(224,92,75,0.15); }
-
-
+ 
+ 
 /* STANDINGS ENHANCEMENTS */
 .mname-row { display:flex; align-items:center; gap:8px; }
 .mpreview-row { margin-top:4px; min-height:18px; }
@@ -377,16 +377,16 @@ h1 em { font-style:italic; color:var(--gold); }
 .st-gap.back { background:rgba(255,255,255,0.06); color:var(--text-muted); }
 .st-hot { font-size:12px; color:var(--text-muted); display:inline-flex; align-items:center; gap:4px; }
 .st-hot-score { font-family:'Cormorant Garamond',serif; font-size:13px; font-weight:700; color:var(--green-light); }
-
+ 
 </style>
 </head>
 <body>
 <div class="wrap">
-
+ 
 <header>
   <div class="hflag">
     <div class="hline l"></div>
-    <span class="heyebrow">Augusta National &nbsp;·&nbsp; April 2025</span>
+    <span class="heyebrow">Augusta National &nbsp;·&nbsp; April 2026</span>
     <div class="hline r"></div>
   </div>
   <h1>The Masters <em>Draft</em></h1>
@@ -396,9 +396,9 @@ h1 em { font-style:italic; color:var(--gold); }
     <span id="rtxt">Loading</span>
   </button>
 </header>
-
+ 
 <div id="errBar" class="err-bar"></div>
-
+ 
 <div class="tabs">
   <button class="tab active" data-tab="standings">Standings</button>
   <button class="tab" data-tab="chart">Points by Round</button>
@@ -407,13 +407,13 @@ h1 em { font-style:italic; color:var(--gold); }
   <button class="tab" data-tab="draft">⛳ Draft</button>
   <button class="tab" data-tab="leaderboard">Masters Leaderboard</button>
 </div>
-
+ 
 <div id="standings" class="panel active">
   <div class="st-head"><span>#</span><span>Manager</span><span>Pts</span></div>
   <div id="stRows"></div>
   <div class="lu" id="lu"></div>
 </div>
-
+ 
 <div id="chart" class="panel">
   <div class="chart-box">
     <h2>Points Through Each Round</h2>
@@ -421,11 +421,11 @@ h1 em { font-style:italic; color:var(--gold); }
     <div class="clegend" id="chartLegend"></div>
   </div>
 </div>
-
+ 
 <div id="picks" class="panel">
   <div class="cgrid" id="cardsGrid"></div>
 </div>
-
+ 
 <div id="scoring" class="panel">
   <div class="scoring-box">
     <h2>How Points Work</h2>
@@ -437,9 +437,9 @@ h1 em { font-style:italic; color:var(--gold); }
     <p style="margin-bottom:0;margin-top:16px;font-size:12px;color:var(--text-muted)">Players who miss the cut or withdraw earn 0 points.</p>
   </div>
 </div>
-
+ 
 <div id="draft" class="panel">
-
+ 
   <!-- Settings -->
   <div class="draft-toolbar">
     <div class="draft-toolbar-left">
@@ -457,7 +457,7 @@ h1 em { font-style:italic; color:var(--gold); }
       <div class="draft-status" id="draftStatus"></div>
     </div>
   </div>
-
+ 
   <!-- Snake Order Panel -->
   <div class="snake-panel" id="snakePanel">
     <div class="snake-header">
@@ -471,7 +471,7 @@ h1 em { font-style:italic; color:var(--gold); }
         <button class="snake-btn secondary" id="expandAllBtn" style="display:none">⊞ Expand All</button>
       </div>
     </div>
-
+ 
     <!-- Carousel (default view) -->
     <div id="snakeCarousel">
       <div class="carousel-nav">
@@ -484,14 +484,14 @@ h1 em { font-style:italic; color:var(--gold); }
       </div>
       <div class="carousel-dots" id="carouselDots"></div>
     </div>
-
+ 
     <!-- Expanded view (hidden by default) -->
     <div id="snakeExpanded" style="display:none">
       <div class="snake-order" id="snakeOrder"></div>
       <button class="snake-btn secondary" id="collapseBtn" style="margin-top:14px;font-size:10px">⊟ Collapse</button>
     </div>
   </div>
-
+ 
   <!-- Draft Feed -->
   <div class="draft-feed-wrap">
     <div class="draft-feed-panel">
@@ -517,7 +517,7 @@ h1 em { font-style:italic; color:var(--gold); }
       </div>
     </div>
   </div>
-
+ 
   <!-- Player Pool -->
   <div class="draft-search-wrap">
     <input id="playerSearch" class="draft-search" placeholder="Search players…" />
@@ -532,12 +532,12 @@ h1 em { font-style:italic; color:var(--gold); }
       <tbody id="draftTableBody"></tbody>
     </table>
   </div>
-
+ 
 </div>
 <div id="leaderboard" class="panel">
   <div class="lb-header">
     <div>
-      <div class="stitle">2025 Masters Tournament</div>
+      <div class="stitle">2026 Masters Tournament</div>
       <div style="font-size:11px;color:var(--text-muted);letter-spacing:.08em;margin-top:4px">Augusta National · Par 72 · Final Results</div>
     </div>
     <div style="font-size:11px;color:var(--text-muted);font-family:'Josefin Sans',sans-serif;letter-spacing:.06em" id="lbUpdated"></div>
@@ -559,7 +559,7 @@ h1 em { font-style:italic; color:var(--gold); }
     </table>
   </div>
 </div>
-
+ 
 </div>
 <script>
 const DRAFT = {
@@ -574,7 +574,7 @@ const DRAFT = {
   "Matthew Bejian": ["Brian Harman","Eric Cole","Luke List","Min Woo Lee","Nick Dunlap","Russell Henley","Ryan Fox","Viktor Hovland"],
   "Teddy Moody":    ["Chris Kirk","Dustin Johnson","Joaquin Niemann","Phil Mickelson","Ryo Hisatsune","Scottie Scheffler","Sergio Garcia","Zach Johnson"]
 };
-
+ 
 const PT = {
   1:30,2:20,3:18,4:16,5:14,6:12,7:10,8:9,9:8,10:7,
   11:6,12:6,13:6,14:6,15:6,16:5,17:5,18:5,19:5,20:5,
@@ -582,112 +582,31 @@ const PT = {
   31:2,32:2,33:2,34:2,35:2,36:1,37:1,38:1,39:1,40:1,
   41:1,42:1,43:1,44:1,45:1
 };
-
+ 
 function getPts(pos) {
   if (!pos||['CUT','MC','WD','DQ','--'].includes(String(pos).toUpperCase())) return 0;
   const n=parseInt(String(pos).replace(/[TtCc]/g,''));
   return isNaN(n)?0:(PT[n]||0);
 }
-
+ 
 function isCut(pos) { return pos&&['CUT','MC','WD','DQ'].includes(String(pos).toUpperCase()); }
-
+ 
 function posCls(pos) {
   if(!pos) return '';
   if(isCut(pos)) return 'c';
   const n=parseInt(String(pos).replace(/[TtCc]/g,''));
   return(!isNaN(n)&&n<=10)?'t':'';
 }
-
-let GD = {
-  "Rory McIlroy":      {pos:"1",  total:"-11",r1:"72",r2:"66",r3:"66",r4:"73",thru:"F"},
-  "Justin Rose":       {pos:"2",  total:"-11",r1:"65",r2:"71",r3:"75",r4:"66",thru:"F"},
-  "Patrick Reed":      {pos:"3",  total:"-9", r1:"71",r2:"70",r3:"69",r4:"69",thru:"F"},
-  "Scottie Scheffler": {pos:"4",  total:"-8", r1:"68",r2:"71",r3:"72",r4:"69",thru:"F"},
-  "Sungjae Im":        {pos:"T5", total:"-7", r1:"71",r2:"70",r3:"71",r4:"69",thru:"F"},
-  "Bryson DeChambeau": {pos:"T5", total:"-7", r1:"69",r2:"68",r3:"69",r4:"75",thru:"F"},
-  "Ludvig Aberg":      {pos:"7",  total:"-6", r1:"68",r2:"73",r3:"69",r4:"72",thru:"F"},
-  "Zach Johnson":      {pos:"T8", total:"-5", r1:"72",r2:"74",r3:"66",r4:"71",thru:"F"},
-  "Xander Schauffele": {pos:"T8", total:"-5", r1:"73",r2:"69",r3:"70",r4:"71",thru:"F"},
-  "Jason Day":         {pos:"T8", total:"-5", r1:"70",r2:"70",r3:"71",r4:"72",thru:"F"},
-  "Corey Conners":     {pos:"T8", total:"-5", r1:"68",r2:"70",r3:"70",r4:"75",thru:"F"},
-  "Harris English":    {pos:"T12",total:"-4", r1:"70",r2:"73",r3:"73",r4:"68",thru:"F"},
-  "Max Homa":          {pos:"T12",total:"-4", r1:"74",r2:"70",r3:"69",r4:"71",thru:"F"},
-  "Bubba Watson":      {pos:"T14",total:"-3", r1:"71",r2:"72",r3:"74",r4:"68",thru:"F"},
-  "Jon Rahm":          {pos:"T14",total:"-3", r1:"75",r2:"71",r3:"70",r4:"69",thru:"F"},
-  "Jordan Spieth":     {pos:"T14",total:"-3", r1:"73",r2:"73",r3:"69",r4:"70",thru:"F"},
-  "Tyrrell Hatton":    {pos:"T14",total:"-3", r1:"69",r2:"70",r3:"75",r4:"71",thru:"F"},
-  "Collin Morikawa":   {pos:"T14",total:"-3", r1:"72",r2:"69",r3:"72",r4:"72",thru:"F"},
-  "Hideki Matsuyama":  {pos:"T21",total:"-2", r1:"73",r2:"68",r3:"79",r4:"66",thru:"F"},
-  "Tommy Fleetwood":   {pos:"T21",total:"-2", r1:"73",r2:"69",r3:"75",r4:"69",thru:"F"},
-  "Byeong-Hun An":     {pos:"T21",total:"-2", r1:"74",r2:"71",r3:"70",r4:"71",thru:"F"},
-  "Viktor Hovland":    {pos:"T21",total:"-2", r1:"71",r2:"69",r3:"73",r4:"73",thru:"F"},
-  "Denny McCarthy":    {pos:"T29",total:"E",  r1:"71",r2:"75",r3:"71",r4:"71",thru:"F"},
-  "Sahith Theegala":   {pos:"T29",total:"E",  r1:"72",r2:"72",r3:"73",r4:"71",thru:"F"},
-  "Joaquin Niemann":   {pos:"T29",total:"E",  r1:"72",r2:"74",r3:"70",r4:"72",thru:"F"},
-  "Justin Thomas":     {pos:"T36",total:"+2", r1:"73",r2:"71",r3:"76",r4:"70",thru:"F"},
-  "Patrick Cantlay":   {pos:"T36",total:"+2", r1:"74",r2:"72",r3:"73",r4:"71",thru:"F"},
-  "Brian Harman":      {pos:"T36",total:"+2", r1:"71",r2:"71",r3:"77",r4:"71",thru:"F"},
-  "Charl Schwartzel":  {pos:"T36",total:"+2", r1:"74",r2:"72",r3:"72",r4:"72",thru:"F"},
-  "Nick Taylor":       {pos:"T40",total:"+3", r1:"73",r2:"71",r3:"74",r4:"73",thru:"F"},
-  "Matt Fitzpatrick":  {pos:"T40",total:"+3", r1:"71",r2:"73",r3:"74",r4:"73",thru:"F"},
-  "Akshay Bhatia":     {pos:"T42",total:"+4", r1:"70",r2:"76",r3:"75",r4:"71",thru:"F"},
-  "J.T. Poston":       {pos:"T42",total:"+4", r1:"74",r2:"72",r3:"73",r4:"73",thru:"F"},
-  "Shane Lowry":       {pos:"T42",total:"+4", r1:"71",r2:"68",r3:"72",r4:"81",thru:"F"},
-  "Wyndham Clark":     {pos:"T46",total:"+5", r1:"76",r2:"68",r3:"75",r4:"74",thru:"F"},
-  "Sam Burns":         {pos:"T46",total:"+5", r1:"73",r2:"70",r3:"75",r4:"75",thru:"F"},
-  "Min Woo Lee":       {pos:"49", total:"+6", r1:"71",r2:"72",r3:"77",r4:"74",thru:"F"},
-  "Stephan Jaeger":    {pos:"T52",total:"+9", r1:"72",r2:"74",r3:"73",r4:"78",thru:"F"},
-  "Tom Kim":           {pos:"T52",total:"+9", r1:"73",r2:"73",r3:"72",r4:"79",thru:"F"},
-  "Russell Henley":    {pos:"CUT",total:"CUT",r1:"79",r2:"68",r3:"--",r4:"--",thru:"CUT"},
-  "Chris Kirk":        {pos:"CUT",total:"CUT",r1:"75",r2:"72",r3:"--",r4:"--",thru:"CUT"},
-  "Dustin Johnson":    {pos:"CUT",total:"CUT",r1:"74",r2:"73",r3:"--",r4:"--",thru:"CUT"},
-  "Keegan Bradley":    {pos:"CUT",total:"CUT",r1:"74",r2:"73",r3:"--",r4:"--",thru:"CUT"},
-  "Tony Finau":        {pos:"CUT",total:"CUT",r1:"75",r2:"73",r3:"--",r4:"--",thru:"CUT"},
-  "Adam Schenk":       {pos:"CUT",total:"CUT",r1:"73",r2:"75",r3:"--",r4:"--",thru:"CUT"},
-  "Sergio Garcia":     {pos:"CUT",total:"CUT",r1:"72",r2:"76",r3:"--",r4:"--",thru:"CUT"},
-  "Fred Couples":      {pos:"CUT",total:"CUT",r1:"71",r2:"77",r3:"--",r4:"--",thru:"CUT"},
-  "Sepp Straka":       {pos:"CUT",total:"CUT",r1:"78",r2:"71",r3:"--",r4:"--",thru:"CUT"},
-  "Adam Scott":        {pos:"CUT",total:"CUT",r1:"77",r2:"72",r3:"--",r4:"--",thru:"CUT"},
-  "Phil Mickelson":    {pos:"CUT",total:"CUT",r1:"75",r2:"74",r3:"--",r4:"--",thru:"CUT"},
-  "Brooks Koepka":     {pos:"CUT",total:"CUT",r1:"74",r2:"75",r3:"--",r4:"--",thru:"CUT"},
-  "Cameron Smith":     {pos:"CUT",total:"CUT",r1:"71",r2:"78",r3:"--",r4:"--",thru:"CUT"},
-  "Austin Eckroat":    {pos:"CUT",total:"CUT",r1:"76",r2:"74",r3:"--",r4:"--",thru:"CUT"},
-  "Nicolai Hojgaard":  {pos:"CUT",total:"CUT",r1:"76",r2:"74",r3:"--",r4:"--",thru:"CUT"},
-  "Cameron Young":     {pos:"CUT",total:"CUT",r1:"72",r2:"79",r3:"--",r4:"--",thru:"CUT"},
-  "Lucas Glover":      {pos:"CUT",total:"CUT",r1:"78",r2:"74",r3:"--",r4:"--",thru:"CUT"},
-  "Will Zalatoris":    {pos:"CUT",total:"CUT",r1:"74",r2:"78",r3:"--",r4:"--",thru:"CUT"},
-  "Matthieu Pavon":    {pos:"CUT",total:"CUT",r1:"78",r2:"76",r3:"--",r4:"--",thru:"CUT"},
-  "Cameron Davis":     {pos:"CUT",total:"CUT",r1:"74",r2:"79",r3:"--",r4:"--",thru:"CUT"},
-  "Nick Dunlap":       {pos:"CUT",total:"CUT",r1:"90",r2:"71",r3:"--",r4:"--",thru:"CUT"},
-  "Grayson Murray":    {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Tiger Woods":       {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Camilo Villegas":   {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Peter Malnati":     {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Gary Woodland":     {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Jake Knapp":        {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Thorbjorn Olesen":  {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Rickie Fowler":     {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Emiliano Grillo":   {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Erik van Rooyen":   {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Lee Hodges":        {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Adam Hadwin":       {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Kurt Kitayama":     {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Ryan Fox":          {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Taylor Moore":      {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Si Woo Kim":        {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Eric Cole":         {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Ryo Hisatsune":     {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Luke List":         {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-  "Adrian Meronk":     {pos:"WD",total:"WD",r1:"--",r2:"--",r3:"--",r4:"--",thru:"DNP"},
-};
-
+ 
+let GD = {};
+ 
 let lastFetch = null;
-
+ 
 // FETCH
 async function fetchLeaderboard() {
   setStatus('loading');
   try {
-    const res = await fetch('https://corsproxy.io/?url='+encodeURIComponent('https://www.espn.com/golf/leaderboard/_/tournamentId/401703504'),{cache:'no-store'});
+    const res = await fetch('https://corsproxy.io/?url='+encodeURIComponent('https://www.espn.com/golf/leaderboard/_/tournamentId/401811941'),{cache:'no-store'});
     if(!res.ok) throw new Error(`HTTP ${res.status}`);
     const html = await res.text();
     let players=[];
@@ -698,11 +617,11 @@ async function fetchLeaderboard() {
     lastFetch=new Date(); setStatus('ok'); hideErr();
   } catch(err) {
     setStatus('error');
-    if(!lastFetch) lastFetch=new Date('2025-04-13');
+    if(!lastFetch) lastFetch=null;
     showErr('Could not refresh live data. Showing 2025 final results.');
   }
 }
-
+ 
 // CALC
 function calcStandings() {
   return Object.entries(DRAFT).map(([mgr,picks])=>{
@@ -710,11 +629,11 @@ function calcStandings() {
     return{mgr,total:pd.reduce((s,p)=>s+p.pts,0),picks:pd};
   }).sort((a,b)=>b.total-a.total);
 }
-
+ 
 // RENDER STANDINGS
 // Snapshot of previous standings for movement tracking
 let standingsSnapshot = {}; // { mgr: rank }
-
+ 
 function getBestActiveGolfer(picks) {
   // Find the highest-placed active (non-cut) golfer
   const active = picks
@@ -728,24 +647,24 @@ function getBestActiveGolfer(picks) {
     .sort((a,b) => a.pos - b.pos);
   return active[0] || null;
 }
-
+ 
 function fmtLiveScore(s) {
   if (!s || s === 'E' || s === '0') return 'E';
   const n = parseInt(s);
   if (isNaN(n)) return s;
   return n > 0 ? '+'+n : String(n);
 }
-
+ 
 function renderStandings() {
   const rows = calcStandings();
   const c = document.getElementById('stRows');
   c.innerHTML = '';
   const leader = rows[0] ? rows[0].total : 0;
-
+ 
   rows.forEach((row, i) => {
     const rank = i + 1;
     const rc = rank===1?'g':rank===2?'s':rank===3?'b':'';
-
+ 
     // Position change vs last snapshot
     const prevRank = standingsSnapshot[row.mgr];
     let moveHtml = '';
@@ -756,22 +675,22 @@ function renderStandings() {
     } else if (prevRank === rank) {
       moveHtml = `<span class="st-move eq">—</span>`;
     }
-
+ 
     // Gap to leader
     const gap = leader - row.total;
     const gapHtml = rank === 1
       ? `<span class="st-gap leader">LEADER</span>`
       : `<span class="st-gap back">-${gap} pts</span>`;
-
+ 
     // Best active golfer
     const best = getBestActiveGolfer(row.picks);
     const hotHtml = best
       ? `<span class="st-hot">🔥 ${best.g.split(' ').pop()} <span class="st-hot-score">${fmtLiveScore(best.score)}</span></span>`
       : '';
-
+ 
     const tr = document.createElement('div');
     tr.className = 'st-row';
-
+ 
     tr.innerHTML = `
       <div class="rank ${rc}">${rank}</div>
       <div class="minfo">
@@ -787,7 +706,7 @@ function renderStandings() {
         <div class="pnum">${row.total}</div>
         <div class="st-gap-wrap">${gapHtml}</div>
       </div>`;
-
+ 
     const xp = document.createElement('div');
     xp.className = 'xpanel';
     const pg = document.createElement('div');
@@ -804,18 +723,18 @@ function renderStandings() {
     c.appendChild(tr);
     c.appendChild(xp);
   });
-
+ 
   // Save snapshot for next render
   rows.forEach((row, i) => { standingsSnapshot[row.mgr] = i + 1; });
-
+ 
   const luEl = document.getElementById('lu');
   if (lastFetch && luEl) luEl.textContent = 'Updated ' + lastFetch.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
 }
-
+ 
 // RENDER CHART
 const COLORS=['#1b4332','#b8963e','#8b2635','#2d6a4f','#6b4226','#40916c','#9b7d3a','#c1440e','#3d6b8a','#5a4a78'];
 let chartInst=null;
-
+ 
 function buildSnaps() {
   const rk=['r1','r2','r3','r4'], names=Object.values(DRAFT).flat();
   return[1,2,3,4].map(round=>{
@@ -830,7 +749,7 @@ function buildSnaps() {
     return pts;
   });
 }
-
+ 
 function renderChart() {
   const mgrs=Object.keys(DRAFT), labels=['Start','After R1','After R2','After R3','Final'];
   const snaps=buildSnaps();
@@ -839,7 +758,7 @@ function renderChart() {
     const data=[0,...snaps.map(s=>picks.reduce((t,g)=>t+(s[g]||0),0))];
     return{label:mgr,data,borderColor:COLORS[i],backgroundColor:COLORS[i]+'15',borderWidth:2.5,pointRadius:5,pointHoverRadius:8,pointBackgroundColor:COLORS[i],tension:0.35,fill:false};
   }).sort((a,b)=>b.data[4]-a.data[4]);
-
+ 
   if(chartInst) chartInst.destroy();
   const ctx=document.getElementById('chartCanvas').getContext('2d');
   chartInst=new Chart(ctx,{
@@ -858,7 +777,7 @@ function renderChart() {
       }
     }
   });
-
+ 
   const leg=document.getElementById('chartLegend'); leg.innerHTML='';
   datasets.forEach(ds=>{
     const item=document.createElement('div'); item.className='litem';
@@ -871,7 +790,7 @@ function renderChart() {
     leg.appendChild(item);
   });
 }
-
+ 
 // RENDER CARDS
 function renderCards() {
   const standings=calcStandings();
@@ -891,13 +810,13 @@ function renderCards() {
     grid.appendChild(card);
   });
 }
-
+ 
 // RENDER SCORING
 function renderScoring() {
   const ranges=[['1st',30],['2nd',20],['3rd',18],['4th',16],['5th',14],['6th',12],['7th',10],['8th',9],['9th',8],['10th',7],['11th–15th',6],['16th–20th',5],['21st–25th',4],['26th–30th',3],['31st–35th',2],['36th–45th',1],['46th+',0],['CUT / WD',0]];
   document.getElementById('ptBody').innerHTML=ranges.map(([f,p])=>`<tr><td>${f}</td><td>${p}</td></tr>`).join('');
 }
-
+ 
 // UI
 function showTab(name,btn) {
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
@@ -908,37 +827,38 @@ function showTab(name,btn) {
 function setStatus(s){const d=document.getElementById('rdot'),t=document.getElementById('rtxt');d.className='rdot';if(s==='loading'){d.classList.add('spin');t.textContent='Updating';}else if(s==='ok'){t.textContent='Live · Refresh';}else{d.classList.add('err');t.textContent='Retry';}}
 function showErr(m){const e=document.getElementById('errBar');e.textContent=m;e.style.display='block';}
 function hideErr(){document.getElementById('errBar').style.display='none';}
-
+ 
 async function refresh(){await fetchLeaderboard();renderStandings();renderChart();renderCards();renderLeaderboard();}
-
-
+ 
+ 
 // ── DRAFT TAB ─────────────────────────────────────────────────────────────────
 const PLAYER_POOL = [
-  "Rory McIlroy","Justin Rose","Patrick Reed","Scottie Scheffler","Sungjae Im",
-  "Bryson DeChambeau","Ludvig Aberg","Zach Johnson","Xander Schauffele","Jason Day",
-  "Corey Conners","Harris English","Max Homa","Bubba Watson","Jon Rahm",
-  "Jordan Spieth","Tyrrell Hatton","Collin Morikawa","Hideki Matsuyama","Tommy Fleetwood",
-  "Byeong-Hun An","Viktor Hovland","Denny McCarthy","Sahith Theegala","Joaquin Niemann",
-  "Justin Thomas","Patrick Cantlay","Brian Harman","Charl Schwartzel","Nick Taylor",
-  "Matt Fitzpatrick","Akshay Bhatia","J.T. Poston","Shane Lowry","Wyndham Clark",
-  "Sam Burns","Min Woo Lee","Stephan Jaeger","Tom Kim",
-  "Russell Henley","Chris Kirk","Dustin Johnson","Keegan Bradley","Tony Finau",
-  "Adam Schenk","Sergio Garcia","Fred Couples","Sepp Straka","Adam Scott",
-  "Phil Mickelson","Brooks Koepka","Cameron Smith","Austin Eckroat","Nicolai Hojgaard",
-  "Cameron Young","Lucas Glover","Will Zalatoris","Matthieu Pavon","Cameron Davis",
-  "Nick Dunlap","Grayson Murray","Tiger Woods","Camilo Villegas","Peter Malnati",
-  "Gary Woodland","Jake Knapp","Thorbjorn Olesen","Rickie Fowler","Emiliano Grillo",
-  "Erik van Rooyen","Lee Hodges","Adam Hadwin","Kurt Kitayama","Ryan Fox",
-  "Taylor Moore","Si Woo Kim","Eric Cole","Ryo Hisatsune","Luke List","Adrian Meronk"
+  "Haotong Li","Johnny Keefer","Carlos Ortiz","Max Homa","Naoyuki Kataoka",
+  "José María Olazábal","Rasmus Neergaard-Petersen","Aldrich Potgieter","Ángel Cabrera","Sami Välimäki",
+  "Jackson Herrington","Charl Schwartzel","Ryan Fox","Max Greyserman","Vijay Singh",
+  "Rasmus Højgaard","Matt McCarty","Kurt Kitayama","Kristoffer Reitan","Casey Jarvis",
+  "Bubba Watson","Nico Echavarria","Cameron Smith","Jake Knapp","Sam Burns",
+  "Nick Taylor","Keegan Bradley","Ryan Gerard","Jason Day","Dustin Johnson",
+  "Shane Lowry","Tommy Fleetwood","Patrick Reed","Akshay Bhatia","Matt Fitzpatrick",
+  "Bryson DeChambeau","Xander Schauffele","Russell Henley","Hideki Matsuyama","Collin Morikawa",
+  "Rory McIlroy","Cameron Young","Alex Noren","Patrick Cantlay","Viktor Hovland",
+  "Sungjae Im","Sam Stevens","Brian Campbell","Andrew Novak","Tom McKibbin",
+  "Mike Weir","Wyndham Clark","Zach Johnson","Michael Kim","Nicolai Højgaard",
+  "Danny Willett","Davis Riley","Adam Scott","Brian Harman","Daniel Berger",
+  "Fred Couples","Min Woo Lee","Sergio Garcia","Aaron Rai","Jacob Bridgeman",
+  "Corey Conners","Harry Hall","Tyrrell Hatton","Maverick McNealy","J.J. Spaun",
+  "Jon Rahm","Ludvig Aberg","Chris Gotterup","Justin Rose","Jordan Spieth",
+  "Brooks Koepka","Justin Thomas","Sepp Straka","Ben Griffin","Gary Woodland",
+  "Scottie Scheffler","Robert MacIntyre","Harris English","Si Woo Kim","Marco Penge"
 ];
-
+ 
 let draftManagers = ["Kyle Howard","Connor King","Mark Metzler","JP Cunniff","Nick Robinson",
                      "Ryan Fishback","Max Shanbrom","Brad Beard","Matthew Bejian","Teddy Moody"];
 let draftPickLimit = 8;
 let draftPicks = {};     // { player: managerName }
 let snakeOrder = [];     // randomized manager order
 let currentPickIdx = 0; // which slot in the full snake sequence are we on
-
+ 
 // Build full snake sequence: [r1 fwd, r2 rev, r3 fwd, ...]
 function buildSnakeSequence() {
   const seq = [];
@@ -948,12 +868,12 @@ function buildSnakeSequence() {
   }
   return seq;
 }
-
+ 
 function getCurrentPicker() {
   const seq = buildSnakeSequence();
   return seq[currentPickIdx] || null;
 }
-
+ 
 function loadDraftFromStorage() {
   try {
     const saved = localStorage.getItem('mastersDraft2026');
@@ -968,14 +888,14 @@ function loadDraftFromStorage() {
     }
   } catch(e) {}
 }
-
+ 
 function saveDraftToStorage() {
   localStorage.setItem('mastersDraft2026', JSON.stringify({
     managers: draftManagers, pickLimit: draftPickLimit,
     picks: draftPicks, snakeOrder, currentPickIdx, feedLog
   }));
 }
-
+ 
 function getDraftObject() {
   const obj = {};
   draftManagers.forEach(m => { obj[m] = []; });
@@ -984,16 +904,16 @@ function getDraftObject() {
   });
   return obj;
 }
-
+ 
 function syncDraftToGlobal() {
   const newDraft = getDraftObject();
   Object.keys(DRAFT).forEach(k => delete DRAFT[k]);
   Object.assign(DRAFT, newDraft);
   renderStandings(); renderChart(); renderCards();
 }
-
+ 
 let carouselRound = 0; // which round is visible in carousel
-
+ 
 function buildRoundSlots(r) {
   const seq = buildSnakeSequence();
   const roundSlots = seq.filter(s => s.round === r + 1);
@@ -1010,34 +930,34 @@ function buildRoundSlots(r) {
     return { slot, absIdx, state, pickLabel };
   });
 }
-
+ 
 function renderCarousel() {
   if (!snakeOrder.length) return;
-
+ 
   const seq = buildSnakeSequence();
   const currentRound = getCurrentPicker() ? getCurrentPicker().round - 1 : draftPickLimit - 1;
-
+ 
   // Auto-jump to current round if not manually navigated
   if (carouselRound !== currentRound && !window._carouselManual) {
     carouselRound = currentRound;
   }
-
+ 
   const track = document.getElementById('carouselTrack');
   const dots = document.getElementById('carouselDots');
   const label = document.getElementById('carouselLabel');
   const prevBtn = document.getElementById('carouselPrev');
   const nextBtn = document.getElementById('carouselNext');
-
+ 
   track.innerHTML = '';
   dots.innerHTML = '';
-
+ 
   // Build all rounds in track (for smooth sliding)
   for (let r = 0; r < draftPickLimit; r++) {
     const roundData = buildRoundSlots(r);
     const page = document.createElement('div');
     page.className = 'carousel-page';
     page.style.cssText = 'min-width:100%;display:flex;flex-wrap:wrap;gap:6px;';
-
+ 
     roundData.forEach(({ slot, absIdx, state, pickLabel }) => {
       const el = document.createElement('div');
       el.className = `snake-slot ${state}`;
@@ -1048,7 +968,7 @@ function renderCarousel() {
       page.appendChild(el);
     });
     track.appendChild(page);
-
+ 
     // Dot
     const dot = document.createElement('button');
     dot.className = 'carousel-dot' + (r === carouselRound ? ' active' : '') + (r === currentRound && r !== carouselRound ? ' has-current' : '');
@@ -1056,19 +976,19 @@ function renderCarousel() {
     dot.addEventListener('click', () => { window._carouselManual = true; carouselRound = r; renderCarousel(); });
     dots.appendChild(dot);
   }
-
+ 
   // Slide to current round
   track.style.transform = `translateX(-${carouselRound * 100}%)`;
   label.textContent = `Round ${carouselRound + 1} of ${draftPickLimit}`;
   prevBtn.disabled = carouselRound === 0;
   nextBtn.disabled = carouselRound === draftPickLimit - 1;
 }
-
+ 
 function renderExpandedOrder() {
   const container = document.getElementById('snakeOrder');
   container.innerHTML = '';
   if (!snakeOrder.length) return;
-
+ 
   for (let r = 0; r < draftPickLimit; r++) {
     const label = document.createElement('div');
     label.className = 'snake-round-label';
@@ -1088,19 +1008,19 @@ function renderExpandedOrder() {
     container.appendChild(row);
   }
 }
-
+ 
 function renderSnakeOrder() {
   if (!snakeOrder.length) return;
-
+ 
   const isExpanded = document.getElementById('snakeExpanded').style.display !== 'none';
   document.getElementById('expandAllBtn').style.display = '';
-
+ 
   if (isExpanded) {
     renderExpandedOrder();
   } else {
     renderCarousel();
   }
-
+ 
   // Update turn label
   const current = getCurrentPicker();
   const totalPicks = buildSnakeSequence().length;
@@ -1112,7 +1032,7 @@ function renderSnakeOrder() {
   }
   document.getElementById('undoPickBtn').disabled = currentPickIdx === 0;
 }
-
+ 
 // Carousel navigation
 document.getElementById('carouselPrev').addEventListener('click', () => {
   if (carouselRound > 0) { window._carouselManual = true; carouselRound--; renderCarousel(); }
@@ -1120,7 +1040,7 @@ document.getElementById('carouselPrev').addEventListener('click', () => {
 document.getElementById('carouselNext').addEventListener('click', () => {
   if (carouselRound < draftPickLimit - 1) { window._carouselManual = true; carouselRound++; renderCarousel(); }
 });
-
+ 
 // Expand / collapse
 document.getElementById('expandAllBtn').addEventListener('click', () => {
   document.getElementById('snakeCarousel').style.display = 'none';
@@ -1135,33 +1055,33 @@ document.getElementById('collapseBtn').addEventListener('click', () => {
   window._carouselManual = false;
   renderCarousel();
 });
-
+ 
 function renderDraftTab() {
   renderFeed();
   document.getElementById('pickLimit').value = draftPickLimit;
   document.getElementById('managerList').value = draftManagers.join(String.fromCharCode(10));
-
+ 
   // Pick counts status
   const counts = {};
   draftManagers.forEach(m => counts[m] = 0);
   Object.values(draftPicks).forEach(mgr => { if (mgr && counts[mgr] !== undefined) counts[mgr]++; });
   const statusLines = draftManagers.map(m => `${m}: ${counts[m]||0}/${draftPickLimit}`);
   document.getElementById('draftStatus').innerHTML = statusLines.join('<br>');
-
+ 
   renderSnakeOrder();
-
+ 
   // Player table
   const search = (document.getElementById('playerSearch').value || '').toLowerCase();
   const tbody = document.getElementById('draftTableBody');
   tbody.innerHTML = '';
   const current = getCurrentPicker();
-
+ 
   PLAYER_POOL.filter(p => p.toLowerCase().includes(search)).forEach(player => {
     const assignedTo = draftPicks[player];
     const isDrafted = !!assignedTo;
     const tr = document.createElement('tr');
     if (isDrafted) tr.classList.add('drafted');
-
+ 
     let actionCell;
     if (isDrafted) {
       actionCell = `<span class="assigned-tag">✓ ${assignedTo}</span>`;
@@ -1172,12 +1092,12 @@ function renderDraftTab() {
     } else {
       actionCell = `<button class="pick-btn" data-player="${player}">Pick for ${current.mgr.split(' ')[0]}</button>`;
     }
-
+ 
     tr.innerHTML = `
       <td><div class="draft-player-name">${player}</div></td>
       <td>${isDrafted ? `<span style="font-size:12px;color:var(--gold)">${assignedTo}</span>` : '<span style="color:var(--text-muted);font-size:11px">Available</span>'}</td>
       <td>${actionCell}</td>`;
-
+ 
     const btn = tr.querySelector('.pick-btn[data-player]');
     if (btn) {
       btn.addEventListener('click', () => {
@@ -1194,7 +1114,7 @@ function renderDraftTab() {
     tbody.appendChild(tr);
   });
 }
-
+ 
 // Randomize draft order
 document.getElementById('randomizeOrder').addEventListener('click', () => {
   if (Object.keys(draftPicks).length > 0) {
@@ -1214,7 +1134,7 @@ document.getElementById('randomizeOrder').addEventListener('click', () => {
   syncDraftToGlobal();
   renderDraftTab();
 });
-
+ 
 // Undo last pick
 document.getElementById('undoPickBtn').addEventListener('click', () => {
   if (currentPickIdx === 0) return;
@@ -1231,7 +1151,7 @@ document.getElementById('undoPickBtn').addEventListener('click', () => {
   syncDraftToGlobal();
   renderDraftTab();
 });
-
+ 
 // Settings save
 document.getElementById('saveDraftSettings').addEventListener('click', () => {
   draftPickLimit = parseInt(document.getElementById('pickLimit').value) || 8;
@@ -1246,38 +1166,38 @@ document.getElementById('saveDraftSettings').addEventListener('click', () => {
   syncDraftToGlobal();
   renderDraftTab();
 });
-
+ 
 // Search
 document.getElementById('playerSearch').addEventListener('input', renderDraftTab);
-
-
+ 
+ 
 // ── DRAFT FEED ────────────────────────────────────────────────────────────────
 let feedLog = []; // { mgr, player, round, pickNum, timestamp }
-
+ 
 function getInitials(name) {
   return name.split(' ').map(p => p[0]).slice(0,2).join('').toUpperCase();
 }
-
+ 
 function renderFeed() {
   const list = document.getElementById('feedList');
   const liveTag = document.getElementById('feedLive');
   if (!snakeOrder.length) return;
-
+ 
   liveTag.style.display = '';
   list.innerHTML = '';
-
+ 
   const seq = buildSnakeSequence();
   const current = getCurrentPicker();
   const totalPicks = seq.length;
-
+ 
   // Show last 12 entries + current + next 1
   const entries = [];
-
+ 
   // Past picks from log
   feedLog.slice(-12).forEach(entry => {
     entries.push({ type:'pick', ...entry });
   });
-
+ 
   // Current picker
   if (current) {
     entries.push({ type:'clock', mgr:current.mgr, round:current.round, pickNum:currentPickIdx+1 });
@@ -1285,19 +1205,19 @@ function renderFeed() {
     const nextSlot = seq[currentPickIdx+1];
     if (nextSlot) entries.push({ type:'upcoming', mgr:nextSlot.mgr, round:nextSlot.round, pickNum:currentPickIdx+2 });
   }
-
+ 
   if (!entries.length) {
     list.innerHTML = '<div class="feed-empty">Draft complete!</div>';
     return;
   }
-
+ 
   entries.forEach((entry, i) => {
     const el = document.createElement('div');
     const isNewest = entry.type === 'pick' && i === entries.filter(e=>e.type==='pick').length - 1;
     el.className = 'feed-item' + (entry.type==='clock'?' clock':entry.type==='upcoming'?' upcoming':isNewest?' pick-new':'');
     const initials = getInitials(entry.mgr);
     const avatarCls = entry.type === 'clock' ? 'active' : entry.type === 'pick' ? 'done' : '';
-
+ 
     let bodyHtml = '';
     if (entry.type === 'pick') {
       bodyHtml = `<div class="feed-body"><strong>${entry.mgr}</strong> selected <span class="fp">${entry.player}</span><span class="feed-pick-num">Pick ${entry.pickNum}</span></div>`;
@@ -1306,7 +1226,7 @@ function renderFeed() {
     } else {
       bodyHtml = `<div class="feed-body" style="color:var(--text-muted)">${entry.mgr} — up next</div>`;
     }
-
+ 
     el.innerHTML = `
       <div class="feed-avatar ${avatarCls}">${initials}</div>
       <div style="flex:1">
@@ -1315,16 +1235,16 @@ function renderFeed() {
       </div>`;
     list.appendChild(el);
   });
-
+ 
   // Scroll to bottom
   list.scrollTop = list.scrollHeight;
-
+ 
   // Update sidebar clock card
   const fccName = document.getElementById('fccName');
   const fccSub = document.getElementById('fccSub');
   const fccBar = document.getElementById('fccBar');
   const fccProgress = document.getElementById('fccProgress');
-
+ 
   if (current) {
     fccName.textContent = current.mgr;
     fccSub.textContent = `Round ${current.round} · Pick ${currentPickIdx+1} of ${totalPicks}`;
@@ -1336,7 +1256,7 @@ function renderFeed() {
     fccBar.style.width = '100%';
     fccProgress.textContent = `${totalPicks} of ${totalPicks} picks made`;
   }
-
+ 
   // Update round summary card
   const roundList = document.getElementById('feedRoundList');
   roundList.innerHTML = '';
@@ -1359,21 +1279,21 @@ function renderFeed() {
     });
   }
 }
-
+ 
 function logPick(mgr, player, round, pickNum) {
   feedLog.push({ mgr, player, round, pickNum, timestamp: Date.now() });
 }
-
+ 
 // Init
 loadDraftFromStorage();
 syncDraftToGlobal();
-
-
-
+ 
+ 
+ 
 // ── MASTERS LEADERBOARD TAB ───────────────────────────────────────────────────
 const GOLFER_MGR = {};
 for (const [m,ps] of Object.entries(DRAFT)) ps.forEach(g => GOLFER_MGR[g]=m);
-
+ 
 function fmtScoreLb(s) {
   if (!s || s === '—') return { text:'—', cls:'even' };
   const str = String(s).trim();
@@ -1384,17 +1304,17 @@ function fmtScoreLb(s) {
   if (n < 0) return { text:str, cls:'under' };
   return { text:'+'+n, cls:'over' };
 }
-
+ 
 // Snapshot of previous leaderboard state for diff highlighting
 let lbSnapshot = {};
-
+ 
 function renderLeaderboard() {
   // Re-sync GOLFER_MGR from current DRAFT state
   Object.keys(GOLFER_MGR).forEach(k => delete GOLFER_MGR[k]);
   for (const [m,ps] of Object.entries(DRAFT)) ps.forEach(g => GOLFER_MGR[g]=m);
-
+ 
   const players = Object.entries(GD).map(([name, d]) => ({ name, ...d }));
-
+ 
   players.sort((a, b) => {
     const acut = ['CUT','MC','WD','DQ'].includes(String(a.pos).toUpperCase());
     const bcut = ['CUT','MC','WD','DQ'].includes(String(b.pos).toUpperCase());
@@ -1406,21 +1326,21 @@ function renderLeaderboard() {
     const bn = parseInt(String(b.pos).replace(/[TtCc]/g,'')) || 999;
     return an - bn;
   });
-
+ 
   const tbody = document.getElementById('lbBody');
   tbody.innerHTML = '';
-
+ 
   players.forEach(p => {
     const mgr = GOLFER_MGR[p.name] || null;
     const sc = fmtScoreLb(p.total);
     const posCls = ['1','2','3'].includes(String(p.pos)) ? 'top3' : '';
     const prev = lbSnapshot[p.name];
     const changed = prev && (prev.pos !== p.pos || prev.total !== p.total);
-
+ 
     const tr = document.createElement('tr');
     if (mgr) tr.style.background = 'rgba(201,168,76,0.05)';
     if (changed) tr.classList.add('lb-changed');
-
+ 
     // Position change indicator
     let posChange = '';
     if (prev && prev.pos && p.pos) {
@@ -1431,7 +1351,7 @@ function renderLeaderboard() {
         else if (pn > pp) posChange = `<span class="lb-move dn">▼${pn-pp}</span>`;
       }
     }
-
+ 
     tr.innerHTML = `
       <td><span class="lb-pos ${posCls}">${p.pos||'—'}</span></td>
       <td>
@@ -1446,27 +1366,27 @@ function renderLeaderboard() {
       <td class="lb-rd" style="font-size:11px">${p.thru||'—'}</td>
       <td><span class="lb-drafted">${mgr||''}</span></td>`;
     tbody.appendChild(tr);
-
+ 
     // Remove flash class after animation
     if (changed) setTimeout(() => tr.classList.remove('lb-changed'), 2000);
   });
-
+ 
   // Save new snapshot
   players.forEach(p => { lbSnapshot[p.name] = { pos: p.pos, total: p.total }; });
-
+ 
   // Timestamp — start counting up
   startLbClock();
 }
-
+ 
 // ── LEADERBOARD TIMESTAMP CLOCK ───────────────────────────────────────────────
 let lbClockInterval = null;
-
+ 
 function startLbClock() {
   if (lbClockInterval) clearInterval(lbClockInterval);
   updateLbTimestamp();
   lbClockInterval = setInterval(updateLbTimestamp, 10000);
 }
-
+ 
 function updateLbTimestamp() {
   const el = document.getElementById('lbUpdated');
   if (!el || !lastFetch) return;
@@ -1475,7 +1395,7 @@ function updateLbTimestamp() {
   else if (secs < 3600) el.textContent = `Updated ${Math.floor(secs/60)}m ago`;
   else el.textContent = 'Updated ' + lastFetch.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
 }
-
+ 
 // INIT
 document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
   showTab(btn.dataset.tab,btn);
@@ -1484,7 +1404,7 @@ document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>
 }));
 document.getElementById('refreshBtn').addEventListener('click',refresh);
 renderScoring();
-lastFetch=new Date('2025-04-13');
+lastFetch=null;
 setStatus('ok');
 renderStandings(); renderChart(); renderCards(); renderLeaderboard();
 (async()=>{await refresh();setInterval(refresh,30*1000);})();
