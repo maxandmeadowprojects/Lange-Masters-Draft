@@ -6,8 +6,6 @@
 <title>The Masters Draft — 12th Annual</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
 <style>
 :root {
   --cream: #f5f0e8;
@@ -576,61 +574,17 @@ h1 em { font-style:italic; color:var(--gold); }
 
 </div>
 <script>
-// ── FIREBASE SETUP ────────────────────────────────────────────────────────────
-const firebaseConfig = {
-  apiKey: "AIzaSyBSfbI74wIA5TgqS9RSweKflnw-XfLc08A",
-  authDomain: "masters-draft-18b9c.firebaseapp.com",
-  databaseURL: "https://masters-draft-18b9c-default-rtdb.firebaseio.com",
-  projectId: "masters-draft-18b9c",
-  storageBucket: "masters-draft-18b9c.firebasestorage.app",
-  messagingSenderId: "940455285840",
-  appId: "1:940455285840:web:7d238afc3db3e942f9ed55"
-};
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
-const draftRef = db.ref('draft');
-
-// Push local state to Firebase
-function saveToFirebase() {
-  draftRef.set({
-    managers: draftManagers,
-    pickLimit: draftPickLimit,
-    picks: draftPicks,
-    snakeOrder: snakeOrder,
-    currentPickIdx: currentPickIdx,
-    feedLog: feedLog
-  });
-}
-
-// Listen for changes from any browser and sync locally
-function listenToFirebase() {
-  draftRef.on('value', snapshot => {
-    const data = snapshot.val();
-    if (!data) return;
-    if (data.managers) draftManagers = data.managers;
-    if (data.pickLimit) draftPickLimit = data.pickLimit;
-    if (data.picks) draftPicks = data.picks;
-    if (data.snakeOrder) snakeOrder = data.snakeOrder;
-    if (typeof data.currentPickIdx === 'number') currentPickIdx = data.currentPickIdx;
-    if (data.feedLog) feedLog = data.feedLog;
-    syncDraftToGlobal();
-    // Re-render draft tab if it's open
-    if (document.getElementById('draft').classList.contains('active')) renderDraftTab();
-  });
-}
-
 
 const DRAFT = {
-  "Kyle Howard":    ["Corey Conners","J.T. Poston","Justin Rose","Matt Fitzpatrick","Sam Burns","Stephan Jaeger","Thorbjorn Olesen","Xander Schauffele"],
-  "Connor King":    ["Byeong-Hun An","Grayson Murray","Kurt Kitayama","Lucas Glover","Ludvig Aberg","Rickie Fowler","Sahith Theegala","Wyndham Clark"],
-  "Mark Metzler":   ["Adam Hadwin","Adam Schenk","Adam Scott","Brooks Koepka","Cameron Smith","Lee Hodges","Matthieu Pavon","Patrick Reed"],
-  "JP Cunniff":     ["Camilo Villegas","Denny McCarthy","Fred Couples","Patrick Cantlay","Peter Malnati","Rory McIlroy","Shane Lowry","Tiger Woods"],
-  "Nick Robinson":  ["Adrian Meronk","Akshay Bhatia","Bubba Watson","Cameron Young","Harris English","Justin Thomas","Keegan Bradley","Tyrrell Hatton"],
-  "Ryan Fishback":  ["Austin Eckroat","Gary Woodland","Hideki Matsuyama","Jake Knapp","Max Homa","Nick Taylor","Tom Kim","Tommy Fleetwood"],
-  "Max Shanbrom":   ["Cameron Davis","Jon Rahm","Sepp Straka","Si Woo Kim","Sungjae Im","Taylor Moore","Tony Finau","Will Zalatoris"],
-  "Brad Beard":     ["Bryson DeChambeau","Charl Schwartzel","Collin Morikawa","Emiliano Grillo","Erik van Rooyen","Jason Day","Jordan Spieth","Nicolai Hojgaard"],
-  "Matthew Bejian": ["Brian Harman","Eric Cole","Luke List","Min Woo Lee","Nick Dunlap","Russell Henley","Ryan Fox","Viktor Hovland"],
-  "Teddy Moody":    ["Chris Kirk","Dustin Johnson","Joaquin Niemann","Phil Mickelson","Ryo Hisatsune","Scottie Scheffler","Sergio Garcia","Zach Johnson"]
+  "Brad Beard": ["Cameron Smith", "Charl Schwartzel", "Danny Willett", "Max Homa", "Rory McIlroy", "Russell Henley", "Ryan Gerard", "Tommy Fleetwood"],
+  "Connor King": ["Akshay Bhatia", "Alex Noren", "Nico Echavarria", "Fred Couples", "Haotong Li", "Jordan Spieth", "Maverick McNealy", "Xander Schauffele"],
+  "Ryan Fishback": ["J.J. Spaun", "Jose Maria Olazabal", "Kurt Kitayama", "Min Woo Lee", "Sam Stevens", "Scottie Scheffler", "Sergio Garcia", "Si Woo Kim"],
+  "Kyle Howard": ["Aldrich Potgieter", "Chris Gotterup", "Jason Day", "Johnny Keefer", "Matt Fitzpatrick", "Max Greyserman", "Patrick Cantlay", "Rasmus Hojgaard"],
+  "JP Cunniff": ["Collin Morikawa", "Harry Hall", "Jake Knapp", "Ludvig Aberg", "Michael Brennan", "Shane Lowry", "Wyndham Clark", "Zach Johnson"],
+  "Max Shanbrom": ["Aaron Rai", "Andrew Novak", "Corey Conners", "Jacob Bridgeman", "Jon Rahm", "Patrick Reed", "Sungjae Im", "Tom McKibbin"],
+  "Mark Metzler": ["Adam Scott", "Gary Woodland", "Hideki Matsuyama", "Justin Rose", "Rasmus Neergaard-Petersen", "Ryan Fox", "Sam Burns", "Vijay Singh"],
+  "Nick Robinson": ["Brooks Koepka", "Bryson DeChambeau", "Bubba Watson", "Casey Jarvis", "Davis Riley", "Dustin Johnson", "Kristoffer Reitan", "Viktor Hovland"],
+  "Teddy Moody": ["Cameron Young", "Carlos Ortiz", "Daniel Berger", "Ethan Fang", "Justin Thomas", "Matt McCarty", "Robert MacIntyre", "Sepp Straka"],
 };
 
 const PT = {
@@ -680,10 +634,36 @@ function rebuildIndex() {
   }
 }
 
+// Known ESPN name aliases -> draft name
+const NAME_ALIASES = {
+  'nico echavarria': 'Nico Echavarria',
+  'nicolas echavarria': 'Nico Echavarria',
+  'jose maria olazabal': 'Jose Maria Olazabal',
+  'josé maría olazábal': 'Jose Maria Olazabal',
+  'rasmus hojgaard': 'Rasmus Hojgaard',
+  'rasmus højgaard': 'Rasmus Hojgaard',
+  'rasmus neergaard-petersen': 'Rasmus Neergaard-Petersen',
+  'ludvig aberg': 'Ludvig Aberg',
+  'ludvig åberg': 'Ludvig Aberg',
+  'joaquin niemann': 'Joaquin Niemann',
+  'joaquín niemann': 'Joaquin Niemann',
+  'angel cabrera': 'Angel Cabrera',
+  'ángel cabrera': 'Angel Cabrera',
+  'sami valimaki': 'Sami Valimaki',
+  'sami välimäki': 'Sami Valimaki',
+  'j.j. spaun': 'J.J. Spaun',
+  'jj spaun': 'J.J. Spaun',
+  'j t poston': 'J.T. Poston',
+  'nicolai hojgaard': 'Nicolai Hojgaard',
+  'nicolai højgaard': 'Nicolai Hojgaard',
+};
+
 // Look up a player in GD by name, tolerating accent/punctuation differences
 function gdLookup(name) {
   if (GD[name]) return GD[name];
   const norm = normName(name);
+  // Check aliases
+  if (NAME_ALIASES[norm]) { const alias = NAME_ALIASES[norm]; if (GD[alias]) return GD[alias]; }
   if (GD_INDEX[norm]) return GD[GD_INDEX[norm]];
   // Try last-name only match as last resort
   const last = norm.split(' ').pop();
